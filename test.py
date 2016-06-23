@@ -1,4 +1,5 @@
 #coding:utf-8
+import time
 class A(object):
     def __init__(self):
         pass
@@ -19,3 +20,4 @@ c= C()
 
 c.getInfo()
 c.show()
+print time.strftime('%Y-%m-%d',time.localtime(time.time()))

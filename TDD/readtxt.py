@@ -6,7 +6,7 @@ def fileWrites():
     f.close()
 def readFile():
      f= file('f:/text.txt','r')
-     print f.read()
+     print f.read().decode('utf8')
      f.close()
 if __name__=='__main__':
     fileWrites()

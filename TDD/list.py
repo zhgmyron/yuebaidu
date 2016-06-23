@@ -1,4 +1,7 @@
 #coding:utf-8
+def getList():
+    list=[['','',u'请您填写手机/邮箱/用户名'],['admin','',u'请您填写密码'],['admin','admin',u'请输入验证码']]
+    return list
 list1=['selenium1','selenium2','webdriver','appium','robotium']
 
 print list1
