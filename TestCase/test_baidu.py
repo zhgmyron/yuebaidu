@@ -12,6 +12,13 @@ class baiduPage(unittest.TestCase):
         self.driver.maximize_window()
         self.driver.get('http://www.baidu.com')
         self.driver.implicitly_wait(30)
+
+    def testLoginFail_001(self):
+        u'''验证:用户名密码为空，点击登录返回的提示信息'''
+        baidu.clickLogin(self.driver)
+        baidu.login(self.driver,BasePage.readCsv(0,0),BasePage.readCsv(0,1))
+        baidu.clickButtonLogin(self.driver)
+        self.assertEqual(u'请您填写手机/邮箱/用户名',baidu.getErrorText(self.driver))
     def test_001(self,username=''):
         u'''验证:用户名为空,点击登录返回的错误信息'''
         baidu.clickLogin(self.driver)
@@ -36,4 +43,4 @@ class baiduPage(unittest.TestCase):
 
 
 if __name__=='__main__':
-        unittest.main()
+        unittest.main(verbosity=2)
