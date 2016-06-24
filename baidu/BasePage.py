@@ -36,13 +36,21 @@ def readExcels():
     return rows
 
 def getXmlData(value):
-    dom=xml.dom.minidom.parse(data_dirs()+'/system.xlsx')
+    dom=xml.dom.minidom.parse(data_dirs()+'/system.xml')
     db=dom.documentElement
-    name=db.getElementByTagName(value)
-    nameValue=name[0]
-    return nameValue.fistChild.data
+    name=db.getElementsByTagName(value)
+    nameValue =name[0]
+    return nameValue.firstChild.data
 
-print getXmlData('failLogin1')
+def getXmlUser(parent,child):
+    dom=xml.dom.minidom.parse(data_dirs()+'/system.xml')
+    db=dom.documentElement
+    itemlist=db.getElementsByTagName(parent)
+    item=itemlist[0]
+    return item.getAttribute(child)
+
+print getXmlData('test')
+print getXmlUser('failLogin1','expected')
 
 
 
