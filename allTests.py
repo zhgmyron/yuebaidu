@@ -4,7 +4,7 @@ import unittest,os,sys,HTMLTestRunner,time
 def suite():
     dir_case=unittest.defaultTestLoader.discover(
         'F:\ASK_TEST\yuebaidu\TestCase',
-        pattern='test_baidu.py',
+        pattern='test_*.py',
         top_level_dir=None
         )
     return dir_case
